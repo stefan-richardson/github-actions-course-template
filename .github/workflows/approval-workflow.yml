@@ -3,6 +3,7 @@ on: pull_request_review
 
 jobs: 
   labelWhenApproved: 
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Label approved pull requests
