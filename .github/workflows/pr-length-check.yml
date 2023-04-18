@@ -12,7 +12,7 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-            const title = github.contect.payload.pull_request.title;
+            const title = github.context.payload.pull_request.title;
             if (title.length > 50) {
               throw new Error("Pull request title is too long. Please keep it under 50 characters.");
             } else {
