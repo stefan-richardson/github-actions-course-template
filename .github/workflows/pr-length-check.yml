@@ -1,16 +1,18 @@
-name: Check Pull Request Title Length
+name: Check Pull Request Length
 on:
   pull_request:
     types: [opened, edited, reopened]
+
 jobs:
   check-title-length:
     runs-on: ubuntu-latest
+
     steps:
-name: Check Pull Request Title Length
+      - name: Check Pull Request Title Length
         uses: actions/github-script@v5
         with:
           script: |
-            const title = github.context.payload.pull_request.title;
+            const title = github.contect.payload.pull_request.title;
             if (title.length > 50) {
               throw new Error("Pull request title is too long. Please keep it under 50 characters.");
             } else {
